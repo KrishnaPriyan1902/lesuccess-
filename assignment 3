@@ -1,0 +1,157 @@
+import java.util.Scanner;
+
+public class ArraysAssignment {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+
+// Problem 1: Search for an Element
+System.out.println(“ Search for an Element");
+System.out.print("Enter size of array: ");
+int n1 = sc.nextInt();
+int[] arr1 = new int[n1];
+
+System.out.print("Enter array elements: ");
+for(int i = 0; i < n1; i++) {
+arr1[i] = sc.nextInt();
+}
+
+System.out.print("Enter element to search: ");
+int x = sc.nextInt();
+
+int index = -1;
+for(int i = 0; i < n1; i++) {
+if(arr1[i] == x) {
+index = i;
+break;
+}
+}
+
+if(index != -1) {
+System.out.println(index);
+} else {
+System.out.println("Not found");
+}
+
+System.out.println();
+
+// Problem 2: Duplicate Elements
+System.out.println("Duplicate Elements");
+System.out.print("Enter number of elements: ");
+int n2 = sc.nextInt();
+int[] arr2 = new int[n2];
+
+System.out.print("Enter array elements: ");
+for(int i = 0; i < n2; i++) {
+arr2[i] = sc.nextInt();
+}
+
+boolean[] printed = new boolean[n2];
+boolean hasDuplicate = false;
+
+System.out.print("Duplicate elements: ");
+for(int i = 0; i < n2; i++) {
+if(!printed[i]) {
+int count = 0;
+for(int j = 0; j < n2; j++) {
+if(arr2[i] == arr2[j]) {
+count++;
+
+}
+}
+if(count > 1) {
+System.out.print(arr2[i] + " ");
+hasDuplicate = true;
+for(int k = 0; k < n2; k++) {
+if(arr2[k] == arr2[i]) {
+printed[k] = true;
+}
+}
+}
+}
+}
+
+if(!hasDuplicate) {
+System.out.print("No duplicates");
+}
+System.out.println();
+
+System.out.println();
+
+// Problem 3: Left Rotation by K Positions
+System.out.println("Left Rotation by K Positions");
+System.out.print("Enter size of array: ");
+int n3 = sc.nextInt();
+int[] arr3 = new int[n3];
+
+System.out.print("Enter array elements: ");
+for(int i = 0; i < n3; i++) {
+
+arr3[i] = sc.nextInt();
+}
+
+System.out.print("Enter number of positions to rotate left: ");
+int k = sc.nextInt();
+
+k = k % n3;
+
+int[] rotated = new int[n3];
+for(int i = 0; i < n3; i++) {
+rotated[i] = arr3[(i + k) % n3];
+}
+
+System.out.print("Rotated array: ");
+for(int i = 0; i < n3; i++) {
+System.out.print(rotated[i] + " ");
+}
+System.out.println();
+
+sc.close();
+}
+}
+
+Sample Test Cases:
+
+Test Case 1 - Search Element:
+Input:
+5
+3 8 2 9 6
+9
+Output: 3
+
+Input:
+4
+1 2 3 4
+5
+Output: Not found
+
+Test Case 2 - Duplicate Elements:
+Input:
+7
+5 3 8 5 6 3 2
+Output: Duplicate elements: 5 3
+
+Input:
+5
+1 2 3 4 5
+Output: Duplicate elements: No duplicates
+
+Test Case 3 - Left Rotation:
+Input:
+6
+
+1 2 3 4 5 6
+2
+Output: Rotated array: 3 4 5 6 1 2
+
+Input:
+5
+10 20 30 40 50
+3
+Output: Rotated array: 40 50 10 20 30
+
+Input:
+4
+1 2 3 4
+0
+Output: Rotated array: 1 2 3 4
