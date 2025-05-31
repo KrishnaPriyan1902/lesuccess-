@@ -189,49 +189,7 @@ toggled += ch;
 
 System.out.println(toggled);
 
-sc.close();
 }
 }
 
-Sample Test Cases:
 
-Test Case 1 - Palindrome:
-Input: madam
-Output: Palindrome
-
-Input: hello
-Output: Not Palindrome
-
-Test Case 2 - Count Vowels and Consonants:
-Input: Java Programming
-Output: Vowels: 5, Consonants: 10
-
-Test Case 3 - Remove Duplicates:
-Input: programming
-Output: progamin
-
-Test Case 4 - Reverse String:
-Input: Hello
-Output: olleH
-
-Test Case 5 - Anagram Check:
-Input: listen
-silent
-Output: Anagrams
-
-Input: hello
-world
-Output: Not Anagrams
-
-Test Case 6 - Capitalize Words:
-Input: java is fun
-Output: Java Is Fun
-
-Test Case 7 - Word Count:
-Input: Java is simple. Java is powerful.
-Java
-Output: 2
-
-Test Case 8 - Toggle Case:
-Input: HeLLo
-Output: hEllO
