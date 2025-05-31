@@ -105,53 +105,6 @@ for(int i = 0; i < n3; i++) {
 System.out.print(rotated[i] + " ");
 }
 System.out.println();
-
-sc.close();
 }
 }
 
-Sample Test Cases:
-
-Test Case 1 - Search Element:
-Input:
-5
-3 8 2 9 6
-9
-Output: 3
-
-Input:
-4
-1 2 3 4
-5
-Output: Not found
-
-Test Case 2 - Duplicate Elements:
-Input:
-7
-5 3 8 5 6 3 2
-Output: Duplicate elements: 5 3
-
-Input:
-5
-1 2 3 4 5
-Output: Duplicate elements: No duplicates
-
-Test Case 3 - Left Rotation:
-Input:
-6
-
-1 2 3 4 5 6
-2
-Output: Rotated array: 3 4 5 6 1 2
-
-Input:
-5
-10 20 30 40 50
-3
-Output: Rotated array: 40 50 10 20 30
-
-Input:
-4
-1 2 3 4
-0
-Output: Rotated array: 1 2 3 4
