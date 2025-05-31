@@ -94,42 +94,4 @@ System.out.println();
 }
 }
 
-/*
-Sample Test Cases:
 
-Test Case 1 - Vowel/Consonant:
-Input: a
-Output: a is a Vowel
-
-Input: z
-Output: z is a Consonant
-
-Test Case 2 - Grade System:
-Input: 95
-Output: Grade A
-
-Input: 80
-Output: Grade B
-
-Input: 65
-Output: Grade C
-
-Input: 45
-Output: Grade D
-
-Input: 30
-Output: Fail
-
-Test Case 3 - Interest Calculator:
-Input: Choice = 1, P = 1000, R = 5, T = 2
-Output: Simple Interest: 100.0
-
-Input: Choice = 2, P = 1000, R = 10, T = 2
-Output: Compound Interest: 210.0
-
-Test Case 4 - Prime Numbers:
-Input: N = 20
-Output: Prime numbers from 1 to 20: 2 3 5 7 11 13 17 19
-
-Input: N = 10
-Output: Prime numbers from 1 to 10: 2 3 5 7
