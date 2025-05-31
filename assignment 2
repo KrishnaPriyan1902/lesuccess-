@@ -1,0 +1,135 @@
+import java.util.Scanner;
+
+public class ControlStatementsAssignment {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+
+// Problem 1: Check Vowel or Consonant
+System.out.println("Check Vowel or Consonant");
+System.out.print("Enter a character: ");
+char ch = sc.next().charAt(0);
+
+if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+System.out.println(ch + " is a Vowel");
+} else {
+System.out.println(ch + " is a Consonant");
+}
+
+System.out.println();
+
+// Problem 2: Grade Based on Marks
+System.out.println("Grade Based on Marks");
+System.out.print("Enter marks (0-100): ");
+int marks = sc.nextInt();
+
+if(marks >= 90 && marks <= 100) {
+System.out.println("Grade A");
+} else if(marks >= 75 && marks <= 89) {
+
+System.out.println("Grade B");
+} else if(marks >= 60 && marks <= 74) {
+System.out.println("Grade C");
+} else if(marks >= 40 && marks <= 59) {
+System.out.println("Grade D");
+} else if(marks >= 0 && marks < 40) {
+System.out.println("Fail");
+} else {
+System.out.println("Invalid marks");
+}
+
+System.out.println();
+
+// Problem 3: Simple or Compound Interest Calculator
+System.out.println(" Interest Calculator");
+System.out.println("Choose: 1 for Simple Interest, 2 for Compound Interest");
+System.out.print("Enter your choice: ");
+int choice = sc.nextInt();
+
+System.out.print("Enter Principal amount: ");
+double p = sc.nextDouble();
+System.out.print("Enter Rate of interest: ");
+double r = sc.nextDouble();
+System.out.print("Enter Time period: ");
+double t = sc.nextDouble();
+
+if(choice == 1) {
+double si = (p * r * t) / 100;
+System.out.println("Simple Interest: " + si);
+
+} else if(choice == 2) {
+double ci = p * Math.pow((1 + r/100), t) - p;
+System.out.println("Compound Interest: " + ci);
+} else {
+System.out.println("Invalid choice");
+}
+
+System.out.println();
+
+// Problem 4: Print Prime Numbers from 1 to N
+System.out.println("Prime Numbers from 1 to N");
+System.out.print("Enter a number N: ");
+int n = sc.nextInt();
+
+System.out.print("Prime numbers from 1 to " + n + ": ");
+for(int i = 2; i <= n; i++) {
+boolean isPrime = true;
+
+for(int j = 2; j <= i/2; j++) {
+if(i % j == 0) {
+isPrime = false;
+break;
+}
+}
+
+if(isPrime) {
+System.out.print(i + " ");
+}
+}
+
+System.out.println();
+
+
+}
+}
+
+/*
+Sample Test Cases:
+
+Test Case 1 - Vowel/Consonant:
+Input: a
+Output: a is a Vowel
+
+Input: z
+Output: z is a Consonant
+
+Test Case 2 - Grade System:
+Input: 95
+Output: Grade A
+
+Input: 80
+Output: Grade B
+
+Input: 65
+Output: Grade C
+
+Input: 45
+Output: Grade D
+
+Input: 30
+Output: Fail
+
+Test Case 3 - Interest Calculator:
+Input: Choice = 1, P = 1000, R = 5, T = 2
+Output: Simple Interest: 100.0
+
+Input: Choice = 2, P = 1000, R = 10, T = 2
+Output: Compound Interest: 210.0
+
+Test Case 4 - Prime Numbers:
+Input: N = 20
+Output: Prime numbers from 1 to 20: 2 3 5 7 11 13 17 19
+
+Input: N = 10
+Output: Prime numbers from 1 to 10: 2 3 5 7
