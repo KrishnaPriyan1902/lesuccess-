@@ -1,0 +1,126 @@
+import java.util.Scanner;
+
+public class AlgorithmsAssignment {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+
+// Problem 1: Find Majority Element
+System.out.println("Find Majority Element");
+System.out.print("Enter size of array: ");
+int n1 = sc.nextInt();
+int[] arr1 = new int[n1];
+
+System.out.print("Enter array elements: ");
+for(int i = 0; i < n1; i++) {
+arr1[i] = sc.nextInt();
+}
+
+int majority = findMajorityElement(arr1);
+System.out.println(majority);
+
+System.out.println();
+
+// Problem 2: Maximum Subarray Sum (Kadane's Algorithm)
+System.out.println("Maximum Subarray Sum (Kadane's Algorithm)");
+System.out.print("Enter number of elements: ");
+int n2 = sc.nextInt();
+int[] arr2 = new int[n2];
+
+System.out.print("Enter array elements: ");
+for(int i = 0; i < n2; i++) {
+arr2[i] = sc.nextInt();
+}
+
+int maxSum = maxSubarraySum(arr2);
+System.out.println(maxSum);
+
+System.out.println();
+
+// Problem 3: First Non-Repeating Character
+System.out.println("First Non-Repeating Character");
+System.out.print("Enter a string: ");
+String str = sc.next();
+
+int index = firstNonRepeatingChar(str);
+System.out.println(index);
+
+System.out.println();
+
+// Problem 4: Check String Rotation
+System.out.println("Check String Rotation");
+System.out.print("Enter first string: ");
+String s1 = sc.next();
+System.out.print("Enter second string: ");
+String s2 = sc.next();
+
+boolean isRotation = checkRotation(s1, s2);
+System.out.println(isRotation);
+
+sc.close();
+}
+
+// Method to find majority element using Boyer-Moore Voting Algorithm
+public static int findMajorityElement(int[] arr) {
+int candidate = arr[0];
+int count = 1;
+
+// Find candidate
+for(int i = 1; i < arr.length; i++) {
+if(arr[i] == candidate) {
+count++;
+} else {
+count--;
+if(count == 0) {
+candidate = arr[i];
+count = 1;
+}
+}
+}
+
+return candidate;
+}
+
+// Method to find maximum subarray sum using Kadane's Algorithm
+public static int maxSubarraySum(int[] arr) {
+int maxSoFar = arr[0];
+int maxEndingHere = arr[0];
+
+for(int i = 1; i < arr.length; i++) {
+maxEndingHere = Math.max(arr[i], maxEndingHere + arr[i]);
+maxSoFar = Math.max(maxSoFar, maxEndingHere);
+}
+
+return maxSoFar;
+}
+
+// Method to find first non-repeating character
+public static int firstNonRepeatingChar(String str) {
+int[] count = new int[26];
+
+// Count frequency of each character
+for(int i = 0; i < str.length(); i++) {
+count[str.charAt(i) - 'a']++;
+}
+
+// Find first character with count 1
+for(int i = 0; i < str.length(); i++) {
+if(count[str.charAt(i) - 'a'] == 1) {
+return i;
+}
+}
+
+return -1;
+}
+
+// Method to check if s2 is rotation of s1
+
+public static boolean checkRotation(String s1, String s2) {
+if(s1.length() != s2.length()) {
+return false;
+}
+
+String combined = s1 + s1;
+return combined.contains(s2);
+}
+}
