@@ -1,0 +1,100 @@
+import java.util.Scanner;
+
+public class RecursionAssignment {
+
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+
+// Question 1: Count Digits using Recursion
+System.out.println("Count Digits using Recursion");
+System.out.print("Enter a number: ");
+int num1 = sc.nextInt();
+int digitCount = countDigits(num1);
+System.out.println("The number of digits in " + num1 + " is " + digitCount);
+
+System.out.println();
+
+// Question 2: Check Palindrome using Recursion
+System.out.println("Check Palindrome using Recursion");
+System.out.print("Enter a string: ");
+String str = sc.next();
+boolean isPalindrome = checkPalindrome(str, 0, str.length() - 1);
+if(isPalindrome) {
+System.out.println("Yes");
+} else {
+System.out.println("No");
+}
+
+System.out.println();
+
+// Question 3: Calculate Power using Recursion
+System.out.println("Calculate Power using Recursion");
+System.out.print("Enter base: ");
+int base = sc.nextInt();
+System.out.print("Enter exponent: ");
+int exp = sc.nextInt();
+int result = power(base, exp);
+System.out.println(result);
+
+System.out.println();
+
+// Question 4: Count Character Occurrences using Recursion
+System.out.println("Count Character Occurrences using Recursion");
+System.out.print("Enter a string: ");
+String str2 = sc.next();
+System.out.print("Enter character to count: ");
+char ch = sc.next().charAt(0);
+int count = countCharacter(str2, ch, 0);
+System.out.println(count);
+
+sc.close();
+}
+
+// Method to count digits using recursion
+public static int countDigits(int n) {
+if(n == 0) {
+return 1;
+}
+if(n < 10) {
+
+return 1;
+}
+return 1 + countDigits(n / 10);
+}
+
+// Method to check palindrome using recursion
+public static boolean checkPalindrome(String str, int start, int end) {
+if(start >= end) {
+return true;
+}
+if(str.charAt(start) != str.charAt(end)) {
+return false;
+}
+return checkPalindrome(str, start + 1, end - 1);
+}
+
+// Method to calculate power using recursion
+public static int power(int base, int exp) {
+if(exp == 0) {
+return 1;
+}
+if(exp == 1) {
+return base;
+}
+return base * power(base, exp - 1);
+}
+
+// Method to count character occurrences using recursion
+public static int countCharacter(String str, char ch, int index) {
+
+if(index >= str.length()) {
+return 0;
+}
+int count = 0;
+if(str.charAt(index) == ch) {
+count = 1;
+}
+return count + countCharacter(str, ch, index + 1);
+}
+}
+
