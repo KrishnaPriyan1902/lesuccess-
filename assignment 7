@@ -1,0 +1,89 @@
+1.
+class Calculator {
+    int result; 
+    static int operationCount = 0;
+    
+    public void add(int a, int b) {
+        result = a + b;
+        operationCount++;
+        System.out.println("Result: " + result);
+    }
+
+    public static void displayOperationCount() {
+        System.out.println("Total operations : " + operationCount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc1 = new Calculator();
+        Calculator calc2 = new Calculator();
+
+        calc1.add(10, 20);
+        calc2.add(5, 7);
+
+        Calculator.displayOperationCount();
+        calc1.displayOperationCount();
+    }
+}
+
+
+2.
+
+class BankAccount {
+    private double balance;
+
+    public BankAccount(double initialAmount) {
+        balance = initialAmount;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount acnt = new BankAccount(1000);
+        acnt.deposit(500);
+        System.out.println("Balance: " + acnt.getBalance());
+
+    }
+}
+
+
+3.
+
+
+class Student {
+    int rollNumber;
+    String name;
+
+    public Student(int rollNumber, String name) {
+        this.rollNumber = rollNumber;
+        this.name = name;
+    }
+
+    public Student(int rollNumber) {
+        this.rollNumber = rollNumber;
+        this.name = "Nivin";
+    }
+
+    public void display() {
+        System.out.println("Roll Number: " + rollNumber + ", Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(101, "Hari");
+        Student s2 = new Student(102);
+
+        s1.display();
+        s2.display();
+    }
+}
