@@ -1,0 +1,111 @@
+import java.util.Scanner;
+
+public class DataTypesAndOperationsChallenge {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Problem 1: Type Conversion Challenge
+        System.out.println(" Type Conversion Challenge");
+        System.out.print("Enter an integer: ");
+        int num = sc.nextInt();
+        
+        System.out.print("Enter a float: ");
+        float f = sc.nextFloat();
+        
+        System.out.print("Enter a character: ");
+        char ch = sc.next().charAt(0);
+        
+        float result1 = (float)num + f;
+        int ascii = (int)ch;
+        int result2 = num + ascii;
+        
+        System.out.println("Integer to float + float input: " + result1);
+        System.out.println("Character ASCII value: " + ascii);
+        System.out.println("Integer + ASCII value: " + result2);
+        
+        System.out.println();
+        
+        // Problem 2: Arithmetic Expression Evaluator
+        System.out.println("Arithmetic Expression Evaluator");
+        System.out.print("Enter first integer: ");
+        int a = sc.nextInt();
+        
+        System.out.print("Enter second integer: ");
+        int b = sc.nextInt();
+        
+        System.out.print("Enter a double: ");
+        double d = sc.nextDouble();
+        
+        int add = a + b;
+        int sub = a - b;
+        int mul = a * b;
+        double div = (double)a / b;
+        double finalResult = (double)add * d;
+        
+        System.out.println("Addition: " + add);
+        System.out.println("Subtraction: " + sub);
+        System.out.println("Multiplication: " + mul);
+        System.out.println("Division: " + div);
+        System.out.println("Addition result * double: " + finalResult);
+        
+        System.out.println();
+        
+        // Problem 3: Bitwise Operator Experiment
+        System.out.println("Bitwise Operator Experiment");
+        System.out.print("Enter first integer: ");
+        int x = sc.nextInt();
+        
+        System.out.print("Enter second integer: ");
+        int y = sc.nextInt();
+        
+        System.out.println("AND: " + (x & y));
+        System.out.println("OR: " + (x | y));
+        System.out.println("XOR: " + (x ^ y));
+        System.out.println("Left shift " + x + " by 2: " + (x << 2));
+        System.out.println("Left shift " + y + " by 2: " + (y << 2));
+        System.out.println("Right shift " + x + " by 2: " + (x >> 2));
+        System.out.println("Right shift " + y + " by 2: " + (y >> 2));
+        
+        
+    }
+}
+
+/*
+Sample Test Case 1:
+Input:
+Integer: 10
+Float: 5.5
+Character: A
+
+Output:
+Integer to float + float input: 15.5
+Character ASCII value: 65
+Integer + ASCII value: 75
+
+Sample Test Case 2:
+Input:
+First integer: 20
+Second integer: 4
+Double: 2.5
+
+Output:
+Addition: 24
+Subtraction: 16
+Multiplication: 80
+Division: 5.0
+Addition result * double: 60.0
+
+Sample Test Case 3:
+Input:
+First integer: 12
+Second integer: 7
+
+Output:
+AND: 4
+OR: 15
+XOR: 11
+Left shift 12 by 2: 48
+Left shift 7 by 2: 28
+Right shift 12 by 2: 3
+Right shift 7 by 2: 1
