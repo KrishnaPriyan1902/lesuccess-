@@ -1,0 +1,171 @@
+Time and Space complexity
+1.	What is the time complexity of binary search in a sorted array?
+A) O(n)
+B) O(log n)
+C) O(n log n)
+D) O(1)
+Answer : B O(log n)
+________________________________________
+2.	What is the average-case time complexity of quicksort?
+A) O(n log n)
+B) O(n²)
+C) O(log n)
+D) O(n)
+Answer : A O(n log n)
+________________________________________
+3. Consider the following code:
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        System.out.print("*");
+    }
+}
+What is the time complexity?
+A) O(n)
+B) O(log n)
+C) O(n²)
+D) O(1)
+Answer : O(n2)
+________________________________________
+3.	What is the space complexity of merge sort?
+A) O(1)
+B) O(n)
+C) O(log n)
+D) O(n²)
+Answer : bn O(n)
+________________________________________
+5. What is the time complexity of the following loop?
+for (int i = 1; i < n; i *= 2) {
+    System.out.println(i);
+}
+A)	O(n)
+B) O(log n)
+C) O(n log n)
+D) O(1)
+Answer : O(log n)
+________________________________________
+6. What is the space complexity of an iterative binary search algorithm?
+A) O(n)
+B) O(1)
+C) O(log n)
+D) O(n²)
+Answer : B O(1)
+________________________________________
+7. What is the time complexity of inserting an element at the start of a LinkedList?
+A) O(n)
+B) O(1)
+C) O(log n)
+D) O(n log n)
+Answer : C O(1)
+________________________________________
+8. What is the time complexity of accessing an element in an array using its index?
+A) O(n)
+B) O(log n)
+C) O(1)
+D) O(n²)
+Answer : C O(1)
+________________________________________
+9. What is the worst-case time complexity of bubble sort?
+A) O(n log n)
+B) O(n²)
+C) O(log n)
+D) O(n)
+Answer :b O(n2)
+________________________________________
+10. Consider the following code:
+int count = 0;
+for (int i = 0; i < n; i++) {
+    count += 1;
+}
+What is the time complexity?
+A) O(n²)
+B) O(n log n)
+C) O(n)
+D) O(1)
+Answer : O(n)
+________________________________________
+11. What is the time complexity of reversing a LinkedList with n elements (iterative approach)?
+A) O(n)
+B) O(log n)
+C) O(n²)
+D) O(1)
+Answer : A O(n)
+________________________________________
+12. What is the space complexity of the following recursive function?
+void printRec(int n) {
+    if (n == 0) return;
+    System.out.println(n);
+    printRec(n - 1);
+}
+A)O(n)
+B) O(1)
+C) O(log n)
+D) O(n²)
+Answer : O(n) space
+
+________________________________________
+13. What is the time complexity of inserting an element in a HashMap (average case)?
+A) O(n)
+B) O(1)
+C) O(log n)
+D) O(n log n)
+Answer : B O(1)
+________________________________________
+14. Consider the following code:
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < Math.sqrt(n); j++) {
+        System.out.print("*");
+    }
+}
+What is the time complexity?
+A) O(n²)
+B) O(n log n)
+C) O(n√n)
+D) O(log n)
+Answer : C O(n√n)
+________________________________________
+15. What is the space complexity of an array of size n?
+A) O(log n)
+B) O(n)
+C) O(1)
+D) O(n²)
+Answer : b O(n)
+________________________________________
+16. Which of the following has the lowest average-case time complexity?
+A) Selection Sort
+B) Merge Sort
+C) Bubble Sort
+D) Insertion Sort
+Answer : b Merge Sort
+________________________________________
+17. What is the time complexity of multiplying two n x n matrices using the standard method?
+A) O(n)
+B) O(n²)
+C) O(n³)
+D) O(n log n)
+Answer : C O((n³)
+________________________________________
+18. What is the best-case time complexity of insertion sort?
+A) O(n)
+B) O(n log n)
+C) O(n²)
+D) O(1)
+Answer : A O(n)
+________________________________________
+19. What is the time complexity of this loop?
+for (int i = 0; i < n; i++) {
+    for (int j = i; j < n; j++) {
+        System.out.print("*");
+    }
+}
+A)O(n²)
+B) O(n)
+C) O(log n)
+D) O(n log n)
+Answer : A O(n2)
+________________________________________
+20. What is the time complexity of searching in a hash table in the worst case?
+A) O(1)
+B) O(log n)
+C) O(n)
+D) O(n log n)
+Answer : C O(n)
