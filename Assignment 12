@@ -1,0 +1,129 @@
+class LinkedList {
+    Node head;
+    Node tail;
+    class Node {
+        int data;
+        Node prev;
+        Node next;
+        Node(int val) {
+            data=val;
+            next=null;
+            prev=null;
+        }
+    }
+    LinkedList() {
+        head=null;
+        tail=null;
+    }
+    public void insertAtBeginning(int val) {
+        Node newNode = new Node(val);
+        newNode.next=head;
+        if(head==null) {
+            tail=newNode;
+        }
+        else {                // list is not empty.
+            head.prev=newNode;
+       }
+       head=newNode;
+    }
+    public void insertAtpos(int pos, int val) {
+        if(pos==0) {
+            insertAtBeginning(val);
+            return;
+        }
+        Node newNode = new Node(val);
+        Node temp = head;
+        for(int i=1;i<pos;i++) {
+            temp = temp.next;
+            if(temp==null) {
+                System.out.println("Invalid");
+                return;
+            }
+        }
+        newNode.next = temp.next;
+        newNode.prev=temp;
+        if(temp==tail) {
+            tail=newNode;
+        }
+        else {
+            temp.next.prev=newNode;
+        }
+        temp.next=newNode;
+    }
+    public void deleteAtPos(int pos) {
+        if(head==null) {
+            System.out.println("Invalid");
+            return;
+        }
+        if(pos==0) {
+            head=head.next;
+            if(head==null) {
+                tail=null;
+            }
+            else {
+              head.prev=null;  
+            }
+            head.prev=null;
+            return;
+        }
+        Node temp=head;
+        Node prev=null;
+        for(int i=1;i<=pos;i++) {
+            prev=temp;
+            temp=temp.next;
+            if(temp==null) {
+                System.out.println("invalid");
+                return;
+            }
+        }
+        prev.next=temp.next;
+        if(temp.next==null) {
+            tail=prev;
+        }
+        else {
+          temp.next.prev=prev;  
+        }
+    }
+    public void display () {
+        Node temp=head;
+        while(temp!=null) {
+            System.out.print(temp.data+ " ");
+            temp=temp.next;
+        }
+    }
+    public void displayrev() {
+        Node temp=tail;
+        while(temp!=null) {
+            System.out.print(temp.data + " ");
+            temp=temp.prev;
+        }
+    }
+   
+}
+
+public class Main {
+    public static void main(String[]args) {
+        LinkedList list = new LinkedList();
+       
+        list.insertAtBeginning(8);
+        list.insertAtBeginning(12);
+        list.insertAtBeginning(4);
+        list.display();
+        System.out.println();
+        list.displayrev();
+        System.out.println();
+       
+        list.insertAtpos(2,10);
+        list.display();
+        System.out.println();
+        list.displayrev();
+        System.out.println();
+       
+        list.deleteAtPos(1);
+        list.display();
+        System.out.println();
+        list.displayrev();
+        System.out.println();
+       
+    }
+}
