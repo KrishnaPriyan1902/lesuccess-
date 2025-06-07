@@ -1,0 +1,187 @@
+problem 1
+
+
+import java.util.*;
+class Queue{
+    int[] queue= new int[100];
+    int rear=0;
+    int front=0;
+    
+    public void enqueue(int val){
+        System.out.println("Element Added to queue: "+ val);
+        queue[rear++]= val;
+    }
+    public int dequeue(){
+        System.out.println("Element removed from queue:"+ queue[front]);
+        return queue[front++];
+    }
+    public void display(){
+        if(front==rear) {
+            System.out.println("Queue is Empty");
+            return;
+        }
+        System.out.print("Elements in Queue are: ");
+        for(int i=front;i<rear;i++){
+            System.out.print(queue[i]+" ");
+        }
+        System.out.println();
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Queue q= new Queue();
+		q.enqueue(10);
+		q.enqueue(20);
+		q.enqueue(30);
+		q.display();
+		q.dequeue();
+		q.display();
+		q.dequeue();
+		q.display();
+		q.dequeue();
+		q.display();
+	}
+}
+
+problem 2
+
+
+class Queue {
+	class Node {
+		int data;
+		Node next;
+		Node(int data) {
+			this.data= data;
+			this.next=null;
+		}
+	}
+	Node rear=null;
+	Node front=null;
+
+	// Adding Queue element
+	public void enqueue(int val) {
+		Node newnode = new Node(val);
+		System.out.println("Element added to Queue: "+ val);
+		if(rear==null) {
+			rear=newnode;
+			front= newnode;
+			return;
+		}
+		rear.next=newnode;
+		rear= newnode;
+	}
+
+	public void dequeue() {
+		if(front==null) {
+			System.out.println("Queue is empty");
+			return;
+		}
+        System.out.println("Element removed from Queue: "+ front.data);
+		front=front.next;
+        if(front==null) rear=null;
+	}
+
+	public boolean isEmpty() {
+		return front==rear;
+	}
+
+	public int size() {
+		if(isEmpty()) {
+			return 0;
+		}
+		int size=1;
+		Node temp=front;
+		while(temp!=rear) {
+			size++;
+			temp=temp.next;
+		}
+		System.out.print("Queue size: ");
+		return size;
+	}
+	public int getFront() {
+		if(isEmpty()) {
+		System.out.println("Queue is empty");
+		return -1;
+		}
+        System.out.print("Queue front: ");
+         return front.data;
+	}
+		public int getRear() {
+		if(isEmpty()) {
+		System.out.println("Queue is empty");
+		return -1;
+		}
+         System.out.print("Queue rear: ");
+         return rear.data;
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+		Queue queue= new Queue();
+		queue.enqueue(10);
+		queue.enqueue(20);
+		queue.enqueue(30);
+		queue.enqueue(40);
+		queue.enqueue(50);
+		queue.enqueue(60);
+		System.out.println(queue.getRear());
+		System.out.println(queue.getFront());
+		System.out.println(queue.size());
+	    queue.dequeue();
+		queue.enqueue(70);
+		queue.enqueue(80);
+		System.out.println(queue.isEmpty());
+		System.out.println(queue.size());
+		System.out.println(queue.getRear());
+		System.out.println(queue.getFront());
+
+	}
+}
+
+problem 3
+
+
+import java.util.*;
+public class Main {
+	public static void reverseFirstKelements(Queue<Integer> q,int k) {
+		if(q.isEmpty()) return;
+		if(k<0 || k> q.size()) {
+			System.out.println ("Invalid K value");
+			return ;
+		}
+		int n= q.size();
+		Stack<Integer> s= new Stack();
+		for(int i=0; i<k; i++) {
+			s.push(q.poll());
+		}
+		while(!s.isEmpty()) {
+			q.offer(s.pop());
+		}
+		for(int i=0; i<n-k; i++) {
+			q.offer(q.poll());
+		}
+	}
+
+
+
+	public static void main(String[] args) {
+		Queue<Integer> queue= new LinkedList();
+		queue.offer(1);
+		queue.offer(2);
+		queue.offer(3);
+		queue.offer(4);
+		queue.offer(5);
+		int k=6;
+		reverseFirstKelements(queue,k);
+		if (k >= 0 && k <= queue.size()) {
+			System.out.println(queue);
+		}
+	}
+}
+// q= 1 2 3 4 5   s={}
+// s=1 2 3   q= 4 5
+// s={} q= 3 2 1 4 5
+// s= 4 5 q={ 3 2 1}
+// s={} q= 3 2 1 4 5
