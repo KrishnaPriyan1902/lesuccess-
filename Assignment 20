@@ -1,0 +1,51 @@
+problem 1
+
+
+def calculate(a, b, operation) {
+    operation(a, b)
+}
+
+// Add
+def add = { x, y -> x + y }
+println "Addition: ${calculate(10, 5, add)}"
+
+// Subtract
+def subtract = { x, y -> x - y }
+println "Subtraction: ${calculate(10, 5, subtract)}"
+
+// Multiply
+def multiply = { x, y -> x * y }
+println "Multiplication: ${calculate(10, 5, multiply)}"
+
+problem 2
+
+
+def input = "hello world hello" 
+def words = input.toLowerCase().split("\\s+")
+def frequencyMap = [:]
+
+words.each { word ->
+    frequencyMap[word] = frequencyMap.get(word, 0) + 1
+}
+
+println "\nWord Frequency:"
+frequencyMap.each { word, count ->
+    println "$word → $count"
+}
+
+
+
+problem 3
+
+
+def wordList = ["hi", "hello", "bye", "good", "sun","a","b","abi"]
+def grouped = [:].withDefault { [] }
+
+wordList.each { word ->
+    grouped[word.length()] << word
+}
+
+
+grouped.each { length, words ->
+    println "$length → $words"
+}
