@@ -1,0 +1,97 @@
+// 1. Creating a file and writing in it
+def newfile = new File("Myfile.txt")
+newfile.text = "ABIMANNAN"
+println newfile.text
+
+// Deleting a file
+newfile.delete()
+
+
+
+
+
+
+// 2. Try-Catch-Finally block
+def fun(a, b) {
+    file = new File("Myfile.txt")
+
+    try {
+        if (file.exists()) {
+            println "File Exists"
+        }
+
+        def result = a / b
+        file.text = "Answer: ${result}"
+        println "Result written to file."
+    } catch (ArithmeticException e) {
+        println "Arithmetic Error: " + e.message
+    } catch (IOException e) {
+        println "IO Error: " + e.message
+    } finally {
+        println "Process done"
+    }
+}
+
+// Function calls
+fun(10, 0) // Triggers division by zero
+fun(10, 5) // Successful execution
+def tempfile = new File("Myfile.txt")
+tempfile.delete()
+fun(10,2) // Fille doesn't exists 
+
+
+
+
+
+//3. methodMissing() method
+
+class Groovy {
+    def methodMissing(String name, args) {
+        println "Method '$name' is not defined"
+    }
+}
+
+def obj1 = new Groovy()
+obj1.welcome() 
+
+
+
+//4. propertyMissing() method
+class Groovy {
+    String name = "Abimannan"
+
+    def propertyMissing(String propName) {
+        return "undefined"
+    }
+}
+
+def obj1 = new Groovy()
+
+println obj1.name      
+println obj1.age       
+println obj1.city 
+
+
+
+
+//5.Groovy class that uses metaprogramming to dynamically modify its properties at runtime.
+
+class Groovy {
+    String name
+    int age
+
+    def print() {
+        println "Name: $name"
+        println "Age: $age"
+    }
+}
+
+def obj1 = new Groovy(name: "Abi", age: 18)
+obj1.print()
+
+//Dynamically modify properties at runtime
+obj1.setProperty("name", "Abimannan")
+obj1.setProperty("age", 21)
+
+println "\nAfter dynamic modification:"
+obj1.print()
